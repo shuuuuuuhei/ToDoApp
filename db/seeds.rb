@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users.create!(
-    name: "my name",
-    content: "hello!",
+  name: 'my name',
+  content: 'hello!'
 )
