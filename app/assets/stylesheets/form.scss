@@ -1,0 +1,41 @@
+@import 'variable';
+input, select {
+  margin: auto;
+    &.text {
+      max-width: 100%;
+      width: 368px;
+      height: 40px;
+      margin: 14px auto;
+      padding: 16px 24px;
+      border: 1px solid #EBEBEB;
+      border-radius: 10px;
+      background-color: #F4F4F4;
+    }
+  }
+  
+  label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+  }
+  
+  textarea {
+    width: 100%;
+    margin: 8px 0px;
+    padding: 8px 8px;
+    min-height: 440px;
+    resize: vertical;
+    border: 1px solid #EBEBEB;
+  }
+  .btn-primary {
+    position: absolute;
+    width: 345px;
+    height: 40px;
+    left: 15px;
+    top: 740px;
+    background: #F8BD1C;
+    border-radius: 4px;
+    color: white;
+    border: none;
+  }
