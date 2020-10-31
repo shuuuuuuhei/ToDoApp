@@ -1,0 +1,67 @@
+@import 'variable';
+@import 'form';
+html {
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .container {
+    padding: 33px 26px;
+    width: 100%;
+  }
+
+  h1,h2,h3,p {
+    color: #000000;
+  }
+  a {
+      font-style: italic;
+  }
+  .float_btn {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    text-align: center;
+    background-color: $primary-color;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    i {
+      margin-top: 22px;
+    }
+  }
+  .top {
+    width: 100%;
+    border-bottom: 1px solid #C0C0C0;
+    padding-bottom: 16px;
+    .top-title {
+      font-size: 18px;
+      margin-top: 17px;
+      margin-left: 30px;
+      font-family: normal;
+      font-weight: 400;
+      line-height: 24.5px;
+    }
+  }
+  .section-top {
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 33px;
+  }
+  
