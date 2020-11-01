@@ -1,0 +1,8 @@
+.container
+    %h2.section-top All Boards
+    - @boards.each do |board|
+        .card
+            .card-title
+                = board.title
+            .card-content
+                = board.description
