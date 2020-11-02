@@ -1,21 +1,20 @@
 .container
     %h2.section-top All Boards
     - @boards.each do |board|
-        .card
-            .card_top
-                .card_title
-                    = board.title
-                .card_detail_actions
-                    .dropdown
-                        = image_tag 'actions.svg', class: 'dropbtn'
-                        .dropdown-content.mini
-                            = link_to 'Edit'
-                            = link_to 'Delete'
-            .card_content
-                = board.description
-            
-            .card_user
-                = image_tag 'icon_image', class: 'user_image'
-
-    .card_add_board
-        = link_to '+ Add new board'
+        = link_to board_path(board) do
+            .card
+                .card_top
+                    .card_title
+                        = board.title
+                    .card_detail_actions
+                        .dropdown
+                            = image_tag 'actions.svg', class: 'dropbtn'
+                            .dropdown-content.mini
+                                = link_to 'Edit'
+                                = link_to 'Delete'
+                .card_content
+                    = board.description
+                .card_user
+                    = image_tag 'icon_image', class: 'user_image'
+    -# .card_add_board
+    -#     = link_to '+ Add new board', new_board_path
