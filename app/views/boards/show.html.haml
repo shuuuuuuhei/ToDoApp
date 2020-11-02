@@ -1,2 +1,12 @@
-= @board.title
-= @board.description
+.container
+    .card_top
+        %h2.section-top= @board.title
+        .card_detail_actions
+            .dropdown
+                = image_tag 'actions.svg', class: 'dropbtn'
+                .dropdown-content.mini
+                    = link_to 'Edit'
+                    = link_to 'Delete'
+    .board
+        .board_cotent
+            = @board.description
