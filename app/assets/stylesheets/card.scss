@@ -1,0 +1,62 @@
+@import 'variable';
+
+.card {
+    background-color: #F4F4F4;
+    margin-bottom: 20px;
+    padding: 32px 15px 10px 15px;
+    border-radius: 10px;
+    &_top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &_title {
+        height: 25px;
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+        display: inline-block;
+        margin-right: auto;
+        line-height: 15px;
+    }
+
+    &_detail_action {
+        cursor: pointer;
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        font-size: 0px;
+        margin: 0 35px;
+        flood-color: #000000;
+        line-height: 15px;
+        opacity: 0.2;
+        font-weight: 800;
+    }
+
+    &_content {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+     &_add_board {
+        padding: 50px 0;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 25px;
+        /* identical to box height */
+        text-align: center;
+        color: #000000;
+        background: #FFFFFF;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        a {
+            text-decoration: none;
+        }
+    }
+}
