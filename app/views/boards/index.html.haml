@@ -10,7 +10,7 @@
                         .dropdown
                             = image_tag 'actions.svg', class: 'dropbtn'
                             .dropdown-content.mini
-                                = link_to 'Edit'
+                                = link_to 'Edit', edit_board_path(id: board.id)
                                 = link_to 'Delete'
                 .card_content
                     = board.description
