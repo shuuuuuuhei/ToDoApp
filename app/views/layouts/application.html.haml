@@ -13,5 +13,8 @@
     %div.top
       %h1.top_title Boards
       = image_tag 'icon_image', class: 'user_image'
-      
+      - if flash.present?
+        .flash
+          - flash.each do |key, value|
+            %div{:class => key}= value
     = yield
