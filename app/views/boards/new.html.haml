@@ -1,5 +1,8 @@
 .container
     %h2.section-top New Card
+    - @board.errors.full_messages.each do |message|
+        %ul
+            %li=message
     = form_with(model: @board, url: boards_path, method: 'post', local: 'true') do |f|
         %div
             = f.label :title, "Name"
