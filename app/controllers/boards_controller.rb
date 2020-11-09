@@ -15,10 +15,24 @@ class BoardsController < ApplicationController
     def create
         @board = current_user.boards.build(board_params)
         if @board.save
-            redirect_to board_path(@board), notice: '保存できたよ'
+            redirect_to board_path(@board), notice: '保存できました'
         else
             flash.now[:error] = '保存に失敗しました'
             render :new
+        end
+    end
+
+    def edit
+        @board = current_user.boards.find(params[:id])
+    end
+
+    def update
+        @board = current_user.boards.find(params[:id])
+        if @board.update(board_params)
+            redirect_to board_path(@board), notice: '保存できました'
+        else
+            flash.now[:error] = '保存できませんでした'
+            render :edit
         end
     end
 
