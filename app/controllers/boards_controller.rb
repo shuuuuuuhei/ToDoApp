@@ -36,6 +36,15 @@ class BoardsController < ApplicationController
         end
     end
 
+    def destroy
+        @board = current_user.boards.find(params[:id])
+        if @board.destroy!
+            redirect_to root_path, notice: '削除できました'
+        else
+            flash.now[:error] = '削除できませんでした'
+        end
+    end
+
 
     private
     def board_params
