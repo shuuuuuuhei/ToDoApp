@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_09_114148) do
+ActiveRecord::Schema.define(version: 2020_11_11_071006) do
 
   create_table "boards", force: :cascade do |t|
     t.string "title"
@@ -27,6 +27,10 @@ ActiveRecord::Schema.define(version: 2020_11_09_114148) do
     t.time "limit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "boards_id"
+    t.index ["boards_id"], name: "index_tasks_on_boards_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
