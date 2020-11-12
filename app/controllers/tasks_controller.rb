@@ -1,13 +1,18 @@
 class TasksController < ApplicationController
-    def index
-        @tasks = Tasks.all
-    end
-    def show
-        
+    def new
+        board = Board.find(params[:board_id])
+        @task = board.tasks.build
     end
 
-    def crate
-        @task = current_user.tasks.build(task_params)
+    def create
+        board = Board.find(params[:board_id])
+        @task = board.tasks.build(task_params)
+        if @task.save
+            redirect_to board_path(board), notice: 'タスクを追加しました'
+        else
+            flash.now[:error] = 'タスクを作成できませんでした'
+            render :new
+        end
     end
 
     private
