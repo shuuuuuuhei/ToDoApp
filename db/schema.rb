@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2020_11_11_071006) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.integer "boards_id"
-    t.index ["boards_id"], name: "index_tasks_on_boards_id"
+    t.integer "board_id"
+    t.index ["board_id"], name: "index_tasks_on_board_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 

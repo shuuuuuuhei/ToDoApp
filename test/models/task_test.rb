@@ -8,13 +8,13 @@
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  boards_id  :integer
+#  board_id   :integer
 #  user_id    :integer
 #
 # Indexes
 #
-#  index_tasks_on_boards_id  (boards_id)
-#  index_tasks_on_user_id    (user_id)
+#  index_tasks_on_board_id  (board_id)
+#  index_tasks_on_user_id   (user_id)
 #
 require 'test_helper'
 
