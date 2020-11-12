@@ -10,3 +10,5 @@
     .board
         .board_cotent
             = @board.description
+    .card_add_board
+        = link_to '+ Add new Card', new_board_task_path(@board)

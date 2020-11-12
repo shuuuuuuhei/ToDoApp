@@ -1,0 +1,20 @@
+.container
+    %h2.section-top New Card
+    - @task.errors.full_messages.each do |message|
+        %ul
+            %li= message
+    = form_with(model: @task, url: board_tasks_path(@task.board), method: 'post', local: true) do |f|
+        %div
+            = f.label :title, "タイトル"
+        %div
+            = f.text_field :title, class: 'text'
+        %div
+            = f.label :content, "内容"
+        %div
+            = f.text_area :content, class: 'text'
+        %div
+            = f.label :limit, "期限"
+        %div
+            != sprintf(f.date_select(:limit, prefix:'task',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+        %div
+        = f.submit "保存", class: 'btn-primary'
