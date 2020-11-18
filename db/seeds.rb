@@ -18,12 +18,4 @@ emily = User.create!(email: 'emily@example.com', password: 'password')
         title: Faker::Lorem.sentence(word_count: 5),
         description: Faker::Lorem.sentence(word_count: 100)
     )
-    john.tasks.create(
-        title: Faker::Lorem.sentence(word_count: 5),
-        description: Faker::Lorem.sentence(word_count: 100)
-    )
-    emily.tasks.create(
-        title: Faker::Lorem.sentence(word_count: 5),
-        description: Faker::Lorem.sentence(word_count: 100)
-    )
 end

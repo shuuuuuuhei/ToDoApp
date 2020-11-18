@@ -15,8 +15,12 @@ class TasksController < ApplicationController
         end
     end
 
+    def show
+        @task = Task.find(params[:id])
+    end
+
     private
     def task_params
-        params.require(:task).permit(:title, :content, :limit)
+        params.require(:task).permit(:title, :content, :limit).merge(user_id: current_user.id)
     end
 end
