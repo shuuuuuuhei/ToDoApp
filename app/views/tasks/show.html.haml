@@ -1,0 +1,10 @@
+.container
+    .card_top
+        %h2.section-top= @task.title
+        .card_detail_actions
+            .dropdown
+                = image_tag 'actions.svg', class: 'dropbtn'
+                .dropdown-content.mini
+    .board
+        .board_cotent
+            = @task.content
