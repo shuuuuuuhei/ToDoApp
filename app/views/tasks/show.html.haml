@@ -7,8 +7,8 @@
                 .dropdown-content.mini
                     = link_to 'Edit', edit_board_task_path(@task.id)
                     = link_to 'Delete', board_task_path(@task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-    .board
-        .task_cotent
+    .card
+        .card_content
             = @task.content
-        .task_limit
+        .card_limit
             = @task.limit.strftime('%Y年%m月%d日')
