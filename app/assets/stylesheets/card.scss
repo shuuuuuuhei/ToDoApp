@@ -9,6 +9,8 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
+        color: #000000;
+        font-weight: 800;
     }
     &_title {
         height: 25px;
@@ -39,7 +41,7 @@
         font-family: Avenir;
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
+        font-size: 18px;
         margin-bottom: 15px;
     }
 
@@ -58,5 +60,10 @@
         a {
             text-decoration: none;
         }
+    }
+
+    &_limit {
+        margin-bottom: 10px;
+        font-size: 14px;
     }
 }
