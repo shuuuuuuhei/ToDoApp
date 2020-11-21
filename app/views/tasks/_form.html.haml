@@ -1,0 +1,27 @@
+.container
+    - if current_page?(new_board_task_path(@task.board_id))
+        %h2.section-top New Card
+    - elsif current_page?(edit_board_task_path(@task.id))
+        %h2.section-top Edit Card
+    - @task.errors.full_messages.each do |message|
+        %ul
+            %li= message
+    = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+        %div
+            = f.label :eyecatch, "アイキャッチ"
+        %div
+            = f.file_field :eyecatch
+        %div
+            = f.label :title, "タイトル", class: 'form_eyecatch'
+        %div
+            = f.text_field :title, class: 'text'
+        %div
+            = f.label :content, "内容"
+        %div
+            = f.text_area :content, class: 'text'
+        %div
+            = f.label :limit, "期限"
+        %div
+            != sprintf(f.date_select(:limit, prefix:'task',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, date_separator:'%s'),'年','月')+'日'
+        %div
+        = f.submit "保存", class: 'btn-primary'
