@@ -11,7 +11,8 @@
     %link{:href => "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", :rel => "stylesheet"}/
   %body
     %div.top
-      %h1.top_title Boards
+      = link_to '/' do
+        %h1.top_title Boards
       = image_tag 'icon_image', class: 'user_image'
       - if flash.present?
         .flash
