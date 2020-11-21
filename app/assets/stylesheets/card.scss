@@ -1,5 +1,5 @@
 @import 'variable';
-
+$container-padding: 16px;
 .card {
     background-color: #F4F4F4;
     margin-bottom: 20px;
@@ -43,6 +43,7 @@
         font-weight: normal;
         font-size: 18px;
         margin-bottom: 15px;
+        opacity: 0.5;
     }
 
      &_add_board {
@@ -65,5 +66,23 @@
     &_limit {
         margin-bottom: 10px;
         font-size: 14px;
+        color: red;
     }
+    &_image {
+        height: 700px;
+        position: relative;
+        overflow: hidden;
+        margin: $container-padding * -1 $container-padding * -1 16px;
+    
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: auto;
+        }
+      }
 }

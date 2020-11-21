@@ -5,9 +5,13 @@
         - @board.tasks.each do |task|
             = link_to board_task_path(@board, task) do
                 .card
+                    - if task.eyecatch.attached?
+                        .card_image
+                            = image_tag task.eyecatch
                     .card_top
                         = task.title
                     .card_content
+                        内容：
                         = task.content
                     .card_limit
                         期限：

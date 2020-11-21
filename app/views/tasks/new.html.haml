@@ -5,7 +5,11 @@
             %li= message
     = form_with(model: @task, url: board_tasks_path(@task.board), method: 'post', local: true) do |f|
         %div
-            = f.label :title, "タイトル"
+            = f.label :eyecatch, "アイキャッチ"
+        %div
+            = f.file_field :eyecatch
+        %div
+            = f.label :title, "タイトル", class: 'form_eyecatch'
         %div
             = f.text_field :title, class: 'text'
         %div
