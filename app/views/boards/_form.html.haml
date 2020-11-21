@@ -1,0 +1,19 @@
+.container
+    - if current_page?(new_board_path)
+        %h2.section-top New Board
+    - elsif current_page?(edit_board_path(board.id))
+        %h2.section-top Edit Board
+    - board.errors.full_messages.each do |message|
+        %ul
+            %li=message
+    = form_with(model: board, local: 'true') do |f|
+        %div
+            = f.label :title, "Name"
+        %div
+            = f.text_field :title, class: 'text'
+        %div
+            = f.label :description
+        %div
+            = f.text_area :description, class: 'text'
+        %div
+            = f.submit "Submit", class: 'btn-primary'
