@@ -12,7 +12,7 @@ ja:
         description: '内容'
     attributes:
       task:
-        titile: 'タイトル'
+        title: 'タイトル'
         content: '内容'
         limit: '期限'
   date:
