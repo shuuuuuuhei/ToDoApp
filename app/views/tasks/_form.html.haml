@@ -1,12 +1,12 @@
 .container
-    - if current_page?(new_board_task_path(@task.board_id))
+    - if current_page?(new_board_task_path(task.board_id))
         %h2.section-top New Card
-    - elsif current_page?(edit_board_task_path(@task.id))
+    - elsif current_page?(edit_board_task_path(task.id))
         %h2.section-top Edit Card
     - @task.errors.full_messages.each do |message|
         %ul
             %li= message
-    = form_with(model: @task, url: board_tasks_path(@task.board), local: true) do |f|
+    = form_with(model: task, url: board_tasks_path(task.board), local: true) do |f|
         %div
             = f.label :eyecatch, "アイキャッチ"
         %div

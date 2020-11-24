@@ -5,8 +5,8 @@
             .dropdown
                 = image_tag 'actions.svg', class: 'dropbtn'
                 .dropdown-content.mini
-                    = link_to 'Edit', edit_board_task_path(@task.id)
-                    = link_to 'Delete', board_task_path(@task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+                    = link_to 'Edit', edit_task_path(task)
+                    = link_to 'Delete', task_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
     .card
         - if task.eyecatch.attached?
             .card_image
@@ -17,3 +17,14 @@
         .card_limit
             期限：
             = task.limit.strftime('%Y年%m月%d日')
+    .comments
+        %h2.comments_top Comment
+        - if task.comments.present?
+            - task.comments.each do |comment|
+                .comments_card
+                    .comments_card_user
+                        = image_tag 'icon_image', class: 'user_image'
+                    .comments_card_content
+                        = comment.content
+        .card_add_board
+            = link_to '+ Add new Comment', new_task_comment_path(task)

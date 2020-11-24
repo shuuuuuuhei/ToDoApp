@@ -1,0 +1,13 @@
+.container
+    - if current_page?(new_task_comment_path)
+        %h2.section-top New Comment
+    - comment.errors.full_messages.each do |message|
+        %ul
+            %li=message
+    = form_with(model: comment, url: task_comments_path(comment.task), local: true) do |f|
+        %div
+            = f.label :comment
+        %div
+            = f.text_area :content, class: 'text'
+        %div
+            = f.submit "Submit", class: 'btn-primary'

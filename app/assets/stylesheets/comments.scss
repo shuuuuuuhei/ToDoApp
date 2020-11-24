@@ -1,0 +1,32 @@
+@import 'variable';
+.comments {
+    &_top {
+        font-family: Avenir;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 26px;
+        line-height: 36px;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+
+    &_card {
+        display: flex;
+        margin-bottom: 30px;
+        max-width: 100%;
+        word-wrap: break-word;
+        &_user {
+            width: 50px;
+            margin: 12px;
+        }
+        &_content {
+            font-family: Avenir;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 19px;
+            color: #000000;
+            word-break: break-all;
+        }
+    }
+}
