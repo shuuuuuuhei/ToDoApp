@@ -22,10 +22,9 @@
         - if task.comments.present?
             - task.comments.each do |comment|
                 .comments_card
-                    .card_content
-                        内容：
-                        = comment.content
-                    .card_user
+                    .comments_card_user
                         = image_tag 'icon_image', class: 'user_image'
+                    .comments_card_content
+                        = comment.content
         .card_add_board
             = link_to '+ Add new Comment', new_task_comment_path(task)
