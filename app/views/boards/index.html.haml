@@ -1,7 +1,6 @@
 .container
     %h2.section-top All Boards
     - @boards.each do |board|
-        = link_to board_path(board) do
-            = render 'board', board: board
+        = render 'commons/board', board: board
     .card_add_board
         = link_to '+ Add new board', new_board_path

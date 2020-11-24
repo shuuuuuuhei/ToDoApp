@@ -13,7 +13,10 @@
     %div.top
       = link_to '/' do
         %h1.top_title Boards
-      = image_tag 'icon_image', class: 'user_image'
+      .dropdown
+        = image_tag 'icon_image', class: 'user_image'
+        .dropdown-content.mini
+          = link_to 'プロフィール', profile_path
       - if flash.present?
         .flash
           - flash.each do |key, value|

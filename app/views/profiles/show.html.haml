@@ -1,0 +1,15 @@
+.container.profilePage
+    %h2.section-top Profile
+    .profilePage_user
+        .profilePage_user_image
+            = image_tag 'icon_image'
+        .profilePage_user_basicInfo
+            .profilePage_user_name
+            .profilePage_user_displayName
+                = current_user.id
+            .profilePage_user_actionButton
+                = link_to 'Edit', edit_profile_path
+            .profilePage_user_introduction
+            あああああああああああああああああああああああああああああああああああああああああああああああああああああ
+    - current_user.boards.each do |board|
+        = render 'commons/board', board: board
