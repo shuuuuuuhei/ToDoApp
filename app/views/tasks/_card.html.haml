@@ -17,3 +17,15 @@
         .card_limit
             期限：
             = task.limit.strftime('%Y年%m月%d日')
+    .comments
+        %h2.comments_top Comment
+        - if task.comments.present?
+            - task.comments.each do |comment|
+                .comments_card
+                    .card_content
+                        内容：
+                        = comment.content
+                    .card_user
+                        = image_tag 'icon_image', class: 'user_image'
+        .card_add_board
+            = link_to '+ Add new Comment', new_task_comment_path(task)
