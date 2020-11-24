@@ -23,7 +23,7 @@
             - task.comments.each do |comment|
                 .comments_card
                     .comments_card_user
-                        = image_tag 'icon_image', class: 'user_image'
+                        = image_tag comment.user.avatar_image, class: 'user_image'
                     .comments_card_content
                         = comment.content
         .card_add_board

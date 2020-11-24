@@ -16,7 +16,7 @@
 #  index_profiles_on_user_id  (user_id)
 #
 class Profile < ApplicationRecord
+    has_one_attached :avatar
     belongs_to :user
-
     enum gender: { male: 0, female: 1, other: 2 }
 end

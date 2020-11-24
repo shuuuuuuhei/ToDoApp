@@ -21,7 +21,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_one_attached :eyecatch
   has_many :boards, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -37,5 +36,13 @@ class User < ApplicationRecord
 
   def prepare_profile
     profile || build_profile
+  end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'icon_image.jpg'
+    end
   end
 end

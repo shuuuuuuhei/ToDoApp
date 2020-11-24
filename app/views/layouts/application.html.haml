@@ -14,7 +14,7 @@
       = link_to '/' do
         %h1.top_title Boards
       .dropdown
-        = image_tag 'icon_image', class: 'user_image'
+        = image_tag current_user.avatar_image, class: 'user_image'
         .dropdown-content.mini
           = link_to 'プロフィール', profile_path
       - if flash.present?
