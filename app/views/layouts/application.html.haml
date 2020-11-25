@@ -13,10 +13,18 @@
     %div.top
       = link_to '/' do
         %h1.top_title Boards
-      .dropdown
-        = image_tag current_user.avatar_image, class: 'user_image'
-        .dropdown-content.mini
-          = link_to 'プロフィール', profile_path
+      - if user_signed_in?
+        .dropdown
+          = image_tag current_user.avatar_image, class: 'user_image'
+          .dropdown-content.mini
+            = link_to 'プロフィール', profile_path
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+      - else
+        .dropdown
+          = image_tag 'icon_image', class: 'user_image'
+          .dropdown-content.mini
+            = link_to 'ログイン', new_user_session_path
+            = link_to '新規登録', new_user_registration_path
       - if flash.present?
         .flash
           - flash.each do |key, value|
