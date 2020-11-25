@@ -3,12 +3,13 @@
         .card_top
             .card_title
                 = board.title
-            .card_detail_actions
-                .dropdown
-                    = image_tag 'actions.svg', class: 'dropbtn'
-                    .dropdown-content.mini
-                        = link_to 'Edit', edit_board_path(id: board.id)
-                        = link_to 'Delete', board_path(id: board.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+            - if current_user == board.user
+                .card_detail_actions
+                    .dropdown
+                        = image_tag 'actions.svg', class: 'dropbtn'
+                        .dropdown-content.mini
+                            = link_to 'Edit', edit_board_path(id: board.id)
+                            = link_to 'Delete', board_path(id: board.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
         .card_content
             = board.description
         .card_user

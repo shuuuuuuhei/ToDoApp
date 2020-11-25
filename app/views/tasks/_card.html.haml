@@ -1,12 +1,13 @@
 .container
     .card_top
         %h2.section-top= @task.title
-        .card_detail_actions
-            .dropdown
-                = image_tag 'actions.svg', class: 'dropbtn'
-                .dropdown-content.mini
-                    = link_to 'Edit', edit_task_path(task)
-                    = link_to 'Delete', task_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        - if task.user == current_user
+            .card_detail_actions
+                .dropdown
+                    = image_tag 'actions.svg', class: 'dropbtn'
+                    .dropdown-content.mini
+                        = link_to 'Edit', edit_task_path(task)
+                        = link_to 'Delete', task_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
     .card
         - if task.eyecatch.attached?
             .card_image
