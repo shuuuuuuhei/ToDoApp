@@ -1,12 +1,13 @@
 .container
     .card_top
         %h2.section-top= @task.title
-        .card_detail_actions
-            .dropdown
-                = image_tag 'actions.svg', class: 'dropbtn'
-                .dropdown-content.mini
-                    = link_to 'Edit', edit_task_path(task)
-                    = link_to 'Delete', task_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        - if task.user == current_user
+            .card_detail_actions
+                .dropdown
+                    = image_tag 'actions.svg', class: 'dropbtn'
+                    .dropdown-content.mini
+                        = link_to 'Edit', edit_task_path(task)
+                        = link_to 'Delete', task_path(task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
     .card
         - if task.eyecatch.attached?
             .card_image
@@ -23,7 +24,7 @@
             - task.comments.each do |comment|
                 .comments_card
                     .comments_card_user
-                        = image_tag 'icon_image', class: 'user_image'
+                        = image_tag comment.user.avatar_image, class: 'user_image'
                     .comments_card_content
                         = comment.content
         .card_add_board

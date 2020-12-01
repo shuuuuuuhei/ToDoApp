@@ -17,6 +17,6 @@
                         期限：
                         = task.limit.strftime('%Y年%m月%d日')
                     .card_user
-                        = image_tag 'icon_image', class: 'user_image'
+                        = image_tag task.user.avatar_image, class: 'user_image'
     .card_add_board
         = link_to '+ Add new Card', new_board_task_path(@board)
