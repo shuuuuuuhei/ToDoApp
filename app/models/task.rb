@@ -26,4 +26,13 @@ class Task < ApplicationRecord
     validates :title, presence: true
     validates :content, presence: true
     validates :limit, presence: true
+
+
+    def comment_count
+        comments.count
+    end
+
+    def comment_user
+        comments.user
+    end
 end
