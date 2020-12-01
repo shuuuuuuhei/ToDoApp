@@ -83,4 +83,19 @@ $container-padding: 16px;
           height: auto;
         }
       }
+    &_comment {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        &_user {
+        }
+
+        &_count {
+            margin-left: auto;
+            opacity: 0.2;
+            font-size: 14px;
+            line-height: 19px;
+            padding: 10px;
+        }
+    }
 }
