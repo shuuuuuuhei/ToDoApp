@@ -33,10 +33,14 @@ gem 'faker'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 gem 'aws-sdk-s3', require: false
 =======
 gem 'font-awesome-sass', '~> 5.4.1'
 >>>>>>> 4c000f9... boardの個別ページを訂正
+=======
+gem 'font-awesome-sass', '~> 5.4.1'
+>>>>>>> master
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
