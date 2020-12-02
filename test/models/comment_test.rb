@@ -2,12 +2,12 @@
 #
 # Table name: comments
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  task_id    :integer
-#  user_id    :integer
+#  task_id    :bigint
+#  user_id    :bigint
 #
 # Indexes
 #

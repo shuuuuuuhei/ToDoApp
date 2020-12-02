@@ -6,7 +6,7 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
-gem 'sqlite3', '~> 1.3', '>= 1.3.6'
+gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -32,13 +32,22 @@ gem 'faker'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+gem 'aws-sdk-s3', require: false
+=======
 gem 'font-awesome-sass', '~> 5.4.1'
+>>>>>>> 4c000f9... boardの個別ページを訂正
+=======
+gem 'font-awesome-sass', '~> 5.4.1'
+>>>>>>> master
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
   gem 'rubocop-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do

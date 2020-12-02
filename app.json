@@ -1,0 +1,16 @@
+{
+    "name": "Todo app",
+    "description": "This is Todoapp",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/shuuuuuuhei/TodoApp",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
